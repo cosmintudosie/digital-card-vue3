@@ -1,0 +1,49 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite --host --port 8099",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "nodemon server/index.js"
+  },
+  "dependencies": {
+    "@vee-validate/rules": "^4.11.7",
+    "@vue/reactivity": "^3.3.4",
+    "axios": "^1.5.0",
+    "base64-js": "^1.5.1",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.1.0",
+    "node": "^20.6.0",
+    "nodemon": "^3.0.1",
+    "pinia": "^2.1.6",
+    "qrcode": "^1.5.3",
+    "vcf": "^2.1.1",
+    "vee-validate": "^4.11.7",
+    "vue": "^3.3.4",
+    "vue-advanced-cropper": "^2.8.8",
+    "vue-cropperjs": "^5.0.0",
+    "vue-qrcode-reader": "^5.3.9",
+    "vue-router": "^4.2.4",
+    "vue3-qr-reader": "^1.0.0",
+    "vuedraggable": "^4.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5",
+    "vue-qrcode": "^2.2.0"
+  },
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
