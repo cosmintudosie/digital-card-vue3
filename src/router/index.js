@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-
 import MainApp from "../components/MainApp.vue";
 import ContactList from "../components/contacts/ContactList.vue"
 import SettingsPage from "../components/Menu/SettingsPage.vue"
 import EditProfile from "../components/Menu/EditProfile.vue"
-
 import SitePicker from "../components/Sites/SitePicker.vue"
 import RegisterForm from "../views/Authentication/RegisterForm.vue";
 import LoginForm from "../views/Authentication/LoginForm.vue";

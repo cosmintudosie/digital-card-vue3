@@ -208,9 +208,7 @@ export default defineStore("platform", {
                 details:'',
               link:''
           },
-         
-         
-       ],
+         ],
     site:[
       "Facebook", "Twitter", "Instagram", "Youtube", "WhatsApp", "Discord", "Telegram", "Skype"
     ]

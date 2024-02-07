@@ -8,17 +8,13 @@
             <a @click="launch(site)"  
             class=" w-32 h-32 flex justify-start items-center  
               text-2xl  rounded-2xl cursor-pointer" >
-            <!-- <h3>{{site.name}}</h3> -->
-         
-              <img class=" w-28 h-28" :src="'/src/assets/icons8-'+site.name.toLowerCase()+'.svg'"/>
+            <img class=" w-28 h-28" :src="'/src/assets/icons8-'+site.name.toLowerCase()+'.svg'"/>
             </a>
               <div class="text-center min-h-12 ">{{site.name}}</div>
               <div class="text-center min-h-12 mb-2 "> {{site.name!=='Contact'?site.details:'Save'}}</div>
         </div>
-
     </div>
-    
-</div>
+    </div>
 <p v-else class="text-center" >There are no links in this profile</p>
 <div class="mx-auto my-5 flex justify-center">
 
@@ -30,7 +26,6 @@ import {
 ref,
 } from "vue";
 import { storeToRefs } from "pinia";
-//import usePlatformStore from "../stores/platform.js";
 import { useContactStore } from "../../stores/contact.js";
 
 const contactStore = useContactStore();
@@ -44,7 +39,6 @@ const launch=(site)=>{
   }else if (site.name ==="Contact"){ 
     
         let activeUser=site.details
-       // console.log(activeUser.name)
        
         const vcardData = `BEGIN:VCARD
 VERSION:3.0
@@ -72,11 +66,10 @@ END:VCARD
           const url = URL.createObjectURL(blob);
 
           a.href = url;
-          a.download = `${contactStore.user.name}.vcf`; // Numele fișierului VCard
+          a.download = `${contactStore.user.name}.vcf`; 
           a.click();
 
          URL.revokeObjectURL(url);
-        // succesMessage.value=true
         
   }else{
     window.open(`${site.link}`)

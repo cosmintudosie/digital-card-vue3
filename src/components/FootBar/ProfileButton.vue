@@ -53,7 +53,6 @@ function deepEqual(obj1, obj2) {
 }
   
   const toggleEdit = async()=>{
-   // console.log('cliked')
    modifiedUser = {}
        if(!userStore.edit )
         { userStore.initialUser=JSON.parse(JSON.stringify(userStore.user))

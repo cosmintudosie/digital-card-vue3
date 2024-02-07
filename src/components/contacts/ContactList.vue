@@ -34,16 +34,9 @@
    onMounted(async () => {
     const response = await axios.get("/api/users/contacts",{params:{contacts:contacts}})
      updatedContacts.value = response.data.sort((a, b) => a.name.localeCompare(b.name)) 
-     //updatedContacts.value.sort((a, b) => a.name.localeCompare(b.name));
-     //console.log(updatedContacts.value.data)
-   })
+       })
 
-
-
-   
  const showModal = ref(false);
      const selectedSite = ref(null);
-   
- 
    
  </script>

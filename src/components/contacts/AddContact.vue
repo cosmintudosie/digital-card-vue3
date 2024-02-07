@@ -30,8 +30,6 @@
   
 closeAddMessage()
     window.location.reload()
-    // router.go(-1)
-    
-
+   
   }
 </script>

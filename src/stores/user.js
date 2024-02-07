@@ -10,13 +10,11 @@ export const useUserStore = defineStore("user", {
     showMenu: false,
     initialUser:null,
     formType:null,
-    
-  }),
+      }),
 
   actions: {
     async updateUser() {
       if(!localStorage.getItem("id")) return
-         
       try{
         let activeId = localStorage.getItem("id");
         const response = await axios.get('/api/users', {

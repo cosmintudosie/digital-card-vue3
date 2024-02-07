@@ -15,11 +15,9 @@ import { QrStream } from 'vue3-qr-reader';
 import {ref,defineEmits } from "vue"
   const emit = defineEmits(['decoded'])
 const isScannerOpen = ref(false);
-//const data = ref(null);
-  
+
 const onDecode = (decodedData) => {
- // data.value = decodedData;
-    console.log(decodedData)
+ 
   isScannerOpen.value = false
   emit('decoded', decodedData)
 };
@@ -30,6 +28,5 @@ const startQRScanner = () => {
 
 const stopQRScanner = () => {
   isScannerOpen.value = false;
-  //data.value = null;
 };
 </script>

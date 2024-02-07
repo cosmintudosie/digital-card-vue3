@@ -10,7 +10,5 @@
   const userStore = useUserStore()
   const closeMenu =()=>{
      userStore.showMenu=false
-    //userStore.initialUser=JSON.parse(JSON.stringify(userStore.user))
-                                    // userStore.edit=true
-  }
+     }
 </script>

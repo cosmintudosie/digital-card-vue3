@@ -45,8 +45,6 @@ const {user, showQr} = storeToRefs(contactStore);
  
 const openQr = () => (showQr.value = true);
 
-
-
 </script>
 <style scoped>
 .slide-leave-active,

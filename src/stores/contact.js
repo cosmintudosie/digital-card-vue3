@@ -1,12 +1,10 @@
 import { defineStore } from "pinia";
-//import { toRaw } from 'vue'
 import axios from "axios";
 
 export const useContactStore = defineStore("contact", {
   state: () => ({
     user: {},
     showQr: false, 
-    //loading:true,
     }),
 
   actions: {
@@ -18,7 +16,6 @@ export const useContactStore = defineStore("contact", {
               },
             });
           this.user=response.data;
-
         },
 
     setUser(activeUser) {
@@ -29,7 +26,6 @@ export const useContactStore = defineStore("contact", {
         let activeSite = null
          if(this.user.sites.length>0) {
          activeSite=this.user.sites.find(el=>el.name === site.name)
-
          }
         if (activeSite) {
           activeSite.link = site.link;
@@ -39,13 +35,9 @@ export const useContactStore = defineStore("contact", {
           console.log(this.user.sites)
         }
     },
-    
-    
-    openQr() {
+   openQr() {
       this.showQr = !this.showQr;
     },
-    
-  },
-
+    },
 });
 

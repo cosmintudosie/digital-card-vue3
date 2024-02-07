@@ -9,7 +9,6 @@
       <p> Succesfuly registered!</p>
       <button class="px-5 py-1 rounded-xl" @click.prevent="reload">OK</button>
     </div>
-
     <div class="flex flex-col">
       <label for="name">Name</label>
       <vee-field name="name" type="text" v-model="name" class="text-gray-800 border-2 ps-2" />
@@ -84,12 +83,9 @@ export default {
       createUser: "register",
     }),
     async register(values) {
-      //console.log(values);
       try {
         await this.createUser(values);
-        //this.$router.push({ path: '/' })
         this.succesReg = true
-        //alert("Account created, please login");
       } catch (error) {
         console.log(error);
         return;

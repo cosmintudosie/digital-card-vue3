@@ -57,12 +57,9 @@ export default {
   methods: {
     ...mapActions(useAuthStore, { authenticate: "authenticate" }),
     async login(values) {
-      //console.log(values);
       try {
         await this.authenticate(values);
-
         this.$router.push({ path: "/" });
-        //window.location.reload();
       } catch (error) {
         console.log(error);
         return;

@@ -63,9 +63,7 @@ export default {
       this.userStore.user={}
       try {
         await this.authenticate(values);
-//let activeId = localStorage.getItem("id")
         if(this.activeId){this.$router.push({ path: `/${this.activeId}` })};
-        //window.location.reload();
       } catch (error) {
         console.log(error);
         return;

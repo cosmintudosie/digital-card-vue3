@@ -6,7 +6,6 @@
             class="fa-solid fa-building w-28 h-28 rounded-xl flex justify-center 
               items-center border-2 fa-4x"></i>
            
-            
             <h2  class=" text-gray-300 " >Company name:</h2>
             <h2  class=" " >{{user.company}}</h2>
             </div>
@@ -40,13 +39,8 @@
   import { defineComponent, onBeforeMount, reactive, ref, computed ,inject} from "vue";
   import { storeToRefs } from "pinia"
   import {useContactStore} from "../../stores/contact.js";
- // import UploadPic from "./UploadPic.vue"
-  //import UploadForm from "./UploadForm.vue"
-  
+ 
   const contactStore = useContactStore()
   const  {user,edit}  = storeToRefs(contactStore)
 
-
-  //const openForm=()=> showForm.value=true
-  
   </script>

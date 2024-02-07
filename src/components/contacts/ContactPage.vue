@@ -33,8 +33,6 @@
   </div>
 </template>
 <script setup>
-//import Nav from "../NavBar/Nav.vue";
-//import Bar from "../FootBar/Bar.vue";
 import ContactPresentation from "./ContactPresentation.vue";
 import ContactSocial from "./ContactSocial.vue";
   import ContactDetails from "./ContactDetails.vue";
@@ -62,7 +60,6 @@ import { useContactStore } from "../../stores/contact.js";
   onBeforeMount(async () => {
   const activeId = route.params.id
     await contactStore.getContact(activeId)
-    //console.log(contactStore.user)
    })
   const showRemButton = userStore.user.contacts?.includes(route.params.id)
  const confirmMessage=ref(false)

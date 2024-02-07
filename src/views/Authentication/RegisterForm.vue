@@ -87,7 +87,6 @@ export default {
       console.log(values);
       try {
         await this.createUser(values);
-        //this.$router.push({ path: '/' })
         alert("Account created, please login");
       } catch (error) {
         console.log(error);

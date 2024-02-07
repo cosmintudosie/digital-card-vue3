@@ -25,11 +25,9 @@
   import QrReader from "./QrReader.vue";
 import { defineComponent, onBeforeMount, reactive, ref, computed} from "vue";
 import { storeToRefs } from "pinia";
-//import usePlatformStore from "../../stores/platform.js";
 import { useUserStore } from "../../stores/user.js";
   import axios from "axios"
   const emit = defineEmits(['close'])
-///import SiteModal from "./SiteModal.vue";
 const contactLink = ref(null)
   const contactId = ref(null)
  
@@ -52,7 +50,7 @@ const addContact=async()=>{
  
 }
   const handleDecodedData = (data) => {
-    contactLink.value = data; // Actualizează starea cu datele citite din QR
+    contactLink.value = data; 
     contactId.value = data.split("/")[data.split("/").length - 1]
     console.log(data)
   }
