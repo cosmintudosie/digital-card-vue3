@@ -61,19 +61,15 @@ export default defineComponent({
     const closeModal = () => {
       emit("close");
     };
-
     const saveSite = () => {
       userStore.setSite(props.site);
-      //console.log(userStore.user.sites);
       closeModal();
     };
     const deleteSite = () => {
       userStore.deleteSite(props.site);
       closeModal();
     };
-
     return {
-      
       saveSite,
       deleteSite,
       closeModal,

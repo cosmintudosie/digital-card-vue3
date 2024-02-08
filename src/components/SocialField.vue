@@ -14,17 +14,14 @@
               <div @click="openModal(element.element)"  
               class=" w-32 h-32 flex justify-start items-center  
               text-2xl  rounded-2xl cursor-pointer" >
-                
                 <img class=" w-28 h-28" :src="'/src/assets/icons8-'+element.element.name.toLowerCase()+'.svg'"/>
                 <div class="text-center  "> {{element.element.name }}&nbsp</div>
                 <div class="text-center " v-if="element.element.name!=='Contact'"> {{element.element.details}}</div>
                 <i class="fa-solid fa-pencil text-red-500 border-red-500 border-2 rounded-full absolute p-2 ms-20 mt-16 text-end z-50"></i>
-               
               </div>
             </template>
          </draggable>
-          
-          <div v-else  class="grid grid-cols-3 mx-2 mb-10  justify-center">
+         <div v-else  class="grid grid-cols-3 mx-2 mb-10  justify-center">
            <div  v-for="site in user.sites" :key="site.name" 
             class="m-auto min-h-[180px] text-gray-500 overflow-hidden " >
                 <div @click="launch(site)"  
@@ -76,13 +73,11 @@ import SiteModal from "./Sites/SiteModal.vue";
         else if(site.name!=="Contact"){window.location.href = site.link};
       }
     };
-
     const closeModal = () => {
       selectedSite.value = null;
       showModal.value = false;
     };
   const launch=(site)=>{
-    
     window.scrollTo({ top: 0, behavior: "smooth" })
   if(site.name==="Phone") {
     window.open(`tel:${site.link}`)
@@ -91,6 +86,4 @@ import SiteModal from "./Sites/SiteModal.vue";
     }else if (site.name ==="Contact"){openModal(site)
     } else  { window.open(`${site.link}`)}
   }
-
-
 </script>

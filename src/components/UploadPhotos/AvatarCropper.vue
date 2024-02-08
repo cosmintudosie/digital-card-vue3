@@ -30,15 +30,12 @@ const avatarSent = ref(null)
 const props = defineProps(['imageUrl'])
 
 const change = ({ coordinates, canvas }) => {
-  // Redimensionează imaginea la dimensiunile dorite
   const resizedCanvas = document.createElement("canvas");
   const ctx = resizedCanvas.getContext("2d");
-  resizedCanvas.width = 200; // Setează lățimea dorită
-  resizedCanvas.height = 200; // Setează înălțimea dorită
+  resizedCanvas.width = 200; 
+  resizedCanvas.height = 200; 
   ctx.drawImage(canvas, 0, 0, resizedCanvas.width, resizedCanvas.height);
-
-  // Obține imaginea redimensionată sub formă de bază64
-  avatarSent.value = resizedCanvas.toDataURL("image/jpeg"); // Poți schimba formatul la nevoie
+  avatarSent.value = resizedCanvas.toDataURL("image/jpeg"); 
 }
 
 const saveAvatar=()=>{
@@ -46,6 +43,6 @@ const saveAvatar=()=>{
     userStore.setAvatar(avatarSent.value)
     closeForm()
 }
-    
+  
 </script>
 

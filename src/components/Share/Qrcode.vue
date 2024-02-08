@@ -20,9 +20,8 @@
   import QrcodeVue from 'vue-qrcode'
   import {ref} from 'vue'
 
-  const link=window.location.href // Link-ul introdus de utilizator
-  const qrCodeGenerated= ref(true) // Variabila pentru a verifica dacă s-a generat un cod QR
-    const linkToCopy = ref('')  
+  const link=window.location.href
+  const qrCodeGenerated= ref(true) const linkToCopy = ref('')  
   const copyLink=()=>{
     const input = document.createElement('input');
       input.value = link;
@@ -42,7 +41,6 @@
         .then(() => console.log('Link shared successfully'))
         .catch((error) => console.error('Error sharing link:', error));
       } else {
-        // Dacă funcția de partajare nu este disponibilă, puteți oferi un fallback sau afișa un mesaj.
         alert('Funcția de partajare nu este suportată pe acest dispozitiv.');
       }
     }
@@ -55,8 +53,6 @@
 .modal-leave-active {
   transition: all 0.5s ease-in-out;
 }
-
-
 .modal-leave-to {
   transform: translateY(-100%);
 }

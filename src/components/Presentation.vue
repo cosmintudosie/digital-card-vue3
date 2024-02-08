@@ -3,7 +3,6 @@
 <transition name='slide'>
     <Qrcode  v-if="showQr"/>
 </transition>
-    <!-- <div class="mb-32">  -->
     <div  class="relative   h-[175px] rounded-xl mx-1 ">
       <img :src="user.image" class="rounded-3xl text-gray-800 h-full w-full" alt="No photo"  />
       <button  v-if="edit" 
@@ -19,7 +18,6 @@
       <button  v-if="edit" 
         class="border-gray-500 border-2 rounded-full absolute p-2 text-end  bottom-3 right-3 "
         @click="formType='avatar'">
-        
         <i class="fa-solid fa-pencil fa-2x text-white"></i>
       </button>
     </div>
@@ -34,8 +32,7 @@
      required='true'
      />
      <h1 v-else class="text-lg font-bold mb-2 " >{{user.name?user.name:"My name"}}</h1>
-     
-    <textarea  v-if="edit"
+     <textarea  v-if="edit"
     class=" my-5 min-h-[50px] border-2 border-gray-400 rounded-md bg-transparent text-center w-full"
     placeholder="Write something about you"
     v-model="user.about">
@@ -43,14 +40,10 @@
     <p v-else class="text-center text-gray-300 text-sm " >{{user.about}}</p>
     </div>
 </div>
-<!-- </div> -->
     <transition name='slide'>
     <UploadForm class="absolute  min-h-[400px]" :formType="formType" v-if="formType" @closePicForm = "formType=null"/>
     </transition>
-    
-    <!-- <Contact/> -->
-    
-  </div>
+    </div>
 </template>
 
 <script setup>
@@ -72,20 +65,8 @@ import Share from "./NavBar/Share.vue";
 const userStore = useUserStore();
 const {user, showQr ,edit,formType} = storeToRefs(useUserStore());
 const showForm = ref(false);
-//const showQr = ref(false);
-//const formType = ref(null);
-// const openFormPicture = () => {
-//   showForm.value = true;
-//   formType.value = "picture";
-// };
-// const openFormAvatar = () => {
-//   showForm.value = true;
-//   formType.value = "avatar";
-// };
 const openQr = () => (showQr.value = true);
 
- 
-  
 </script>
 <style scoped>
 .slide-leave-active,

@@ -34,7 +34,6 @@ const showModal = ref(false);
     const openModal = (site) => {
       selectedSite.value = site;
       showModal.value = true;
-     // console.log(site)
        window.scrollTo(0,0)
     };
 

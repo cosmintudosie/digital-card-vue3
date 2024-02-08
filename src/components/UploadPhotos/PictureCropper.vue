@@ -27,28 +27,19 @@ import {useUserStore} from "../../stores/user.js";
 const emit = defineEmits(['closeForm'])
 const closeForm = ()=>emit('closeForm')
 const userStore = useUserStore()
-
-
 const imageSent = ref(null)
 const props = defineProps(['imageUrl'])
-
-// const change = ({ coordinates, canvas })=>{
-//    imageSent.value = canvas.toDataURL()
-//     }
 const change = ({ coordinates, canvas }) => {
-  // Redimensionează imaginea la dimensiunile dorite
   const resizedCanvas = document.createElement("canvas");
   const ctx = resizedCanvas.getContext("2d");
-  resizedCanvas.width = 440; // Setează lățimea dorită
-  resizedCanvas.height = 250; // Setează înălțimea dorită
+  resizedCanvas.width = 440; 
+  resizedCanvas.height = 250; 
   ctx.drawImage(canvas, 0, 0, resizedCanvas.width, resizedCanvas.height);
 
-  // Obține imaginea redimensionată sub formă de bază64
-  imageSent.value = resizedCanvas.toDataURL("image/jpeg"); // Poți schimba formatul la nevoie
+  imageSent.value = resizedCanvas.toDataURL("image/jpeg"); 
 }
 
 const saveImage=()=>{
-  //console.log(imageSent.value)
     userStore.setImage(imageSent.value)
     closeForm()
 }

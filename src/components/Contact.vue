@@ -52,16 +52,11 @@
   import { defineComponent, onBeforeMount, reactive, ref, computed ,inject} from "vue";
   import { storeToRefs } from "pinia"
   import {useUserStore} from "../stores/user.js";
- // import UploadPic from "./UploadPic.vue"
-  //import UploadForm from "./UploadForm.vue"
-  export default defineComponent({
+ export default defineComponent({
       name: 'Contact',
-     
-  setup(){
+     setup(){
   const userStore = useUserStore()
   const  {user,edit}  = storeToRefs(useUserStore())
-  
-  
   const openForm=()=> showForm.value=true
   return{
       user,   

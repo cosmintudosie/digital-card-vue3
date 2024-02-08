@@ -8,16 +8,12 @@
         <input type="file" @change="handleImageUpload" />
         <component :is="props.formType==='picture'? PictureCropper:AvatarCropper" 
         :imageUrl = "imageUrl" @closeForm = "closePicForm"
-        
         />
         
     </div>
   </template>
-  
-  <script setup>
-
-  import { ref, computed} from "vue";
-
+    <script setup>
+import { ref, computed} from "vue";
 import PictureCropper from './PictureCropper.vue'
 import AvatarCropper from './AvatarCropper.vue'
     import { useRouter } from "vue-router"
@@ -28,8 +24,7 @@ const closePicForm = ()=>emit('closePicForm')
 const imageUrl = ref(null)
 const props = defineProps(['formType'])
 const handleImageUpload=(event)=> {
-      imageFile.value = event.target.files[0]; // Obțineți prima imagine din selecția utilizatorului
-
+      imageFile.value = event.target.files[0]; 
       if (imageFile) {
         const reader = new FileReader();
         reader.onload = (e) => {
@@ -40,10 +35,8 @@ const handleImageUpload=(event)=> {
     }
     const isHome = computed(() => {
       let home=router.currentRoute.value.path
-      //console.log(router.currentRoute.value.path)
       return router.currentRoute.value.path !== '/edit-profile';
-      
-      // Modificați ruta de acasă conform configurației dvs.
+     
     });
 </script>
   
